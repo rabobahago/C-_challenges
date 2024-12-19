@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <math.h>
+#include <cmath> // Correct header for pow and sqrt
 using std::cout;
 using std::endl;
 using std::setw;
@@ -20,9 +20,9 @@ int main(){
    cin >> score2;
    cout << "score3" << endl;
    cin >> score3;
-   average = (score1 + score2 + score3) / 3;
-   cout << average << endl;
-   cout << letter <<endl;
-   cout<< hypo;
+   average = (score1 + score2 + score3) / 3.0; // Ensure average is a float
+   cout << "Average: " << average << endl;
+   cout << "Letter: " << letter << endl;
+   cout << "Hypotenuse: " << hypo << endl;
    return 0;
 }
