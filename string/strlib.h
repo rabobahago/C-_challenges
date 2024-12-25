@@ -1,7 +1,8 @@
 #ifndef STRLIB_H
 #include <iostream>
 #include "boolean.h"
-
+using std::ostream;
+using std::istream;
 //declaration section
 const int MAX_STRING_SIZE = 21;
 class string{
@@ -22,7 +23,8 @@ class string{
     boolean operator != (const string &str);
     string& operator = (const char str[MAX_STRING_SIZE]);
     string& operator = (const string &str);
-    //friend istream& operator >> (istream &is, string &str);
+    friend istream& operator >> (istream &is, string &str);
+    friend ostream& operator >> (ostream &os, const string &str);
     private:
     char data[MAX_STRING_SIZE];
 
