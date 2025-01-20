@@ -7,7 +7,7 @@ using std::cin;
 using std:: endl;
 const int MAX_STRING_SIZE = 11;
 typedef char string[MAX_STRING_SIZE];
-
+//g++ intcheck.cpp -o intcheck
 boolean is_integer(string str);
 int to_integer(string str);
 int main(){

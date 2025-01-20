@@ -7,13 +7,14 @@ using std::setw;
 using std::cin;
 
 const int LOVE_AGE = 80;
+
 int main(){
    char letter ='a' - 'a' + 'A';
    int score1, score2, score3;
    float average;
    int base1 = 700;
    int base2 = 800;
-   float hypo = sqrt(pow(base1, 2) + pow(base2, 2));
+   float hypo = std::sqrt(std::pow(base1, 2) + std::pow(base2, 2)); // Use std:: prefix
    cout << "score1" << endl;
    cin >> score1;
    cout << "score2" << endl;
