@@ -19,5 +19,4 @@ int main(){
     print(&greeting, 'c');
     print(&num, 'i');
     print(&num_d, 'd');
-
 }
