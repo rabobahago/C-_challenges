@@ -49,8 +49,20 @@ class Employee: AbstractEmployee{
         cout << "hello, " << Name << ". Sorry, You have not been promoted" << "\n";
     }
 };
+class Developer: Employee{
+    public:
+        string FavProgrammingLanguage;
+        Developer(string name, string company, int age, string favProgrammingLanguage): Employee(name, company, age){
+            FavProgrammingLanguage = favProgrammingLanguage;
+        }
+        void fixedBug(){
+            cout << getName() << " fixed bug with his favourite programming language, guess the language: wala, It is  " << FavProgrammingLanguage << "\n";
+        }
+};
 int main(){
-    Employee employee1 = Employee("Rabo Yusuf", "Amazon Dev", 12);
-    employee1.AskForPromotion();
+    // Employee employee1 = Employee("Rabo Yusuf", "Amazon Dev", 12);
+    // employee1.AskForPromotion();
+    Developer developer = Developer("Rabo", "Open IA", 37, "c++");
+    developer.fixedBug();
 
 }
