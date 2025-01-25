@@ -5,6 +5,8 @@ class AbstractEmployee{
 };
 class Employee: AbstractEmployee{
     private:
+
+    protected:
     string Name;
     string Company;
     int Age;
@@ -48,21 +50,41 @@ class Employee: AbstractEmployee{
         else
         cout << "hello, " << Name << ". Sorry, You have not been promoted" << "\n";
     }
+    virtual void work(){
+        cout<< "I am " << Name << " by name, I work as a CEO at " << Company << "\n";
+        cout << "\n";
+    }
 };
-class Developer: Employee{
+class Developer: public Employee{
     public:
         string FavProgrammingLanguage;
         Developer(string name, string company, int age, string favProgrammingLanguage): Employee(name, company, age){
             FavProgrammingLanguage = favProgrammingLanguage;
         }
-        void fixedBug(){
+        void work() override{
             cout << getName() << " fixed bug with his favourite programming language, guess the language: wala, It is  " << FavProgrammingLanguage << "\n";
         }
 };
+class HiringManager: public Employee{
+    public:
+        string Hiring;
+    HiringManager(string name, string company, int age, string hiring): Employee(name, company, age){
+        Hiring = hiring;
+    }
+    void work() override{
+        cout<< "I am " << Name << " by name, I work as a " << Hiring;
+    }
+};
 int main(){
-    // Employee employee1 = Employee("Rabo Yusuf", "Amazon Dev", 12);
-    // employee1.AskForPromotion();
+    Employee employee1 = Employee("Rabo Yusuf", "Amazon Dev", 12);
+    employee1.AskForPromotion();
     Developer developer = Developer("Rabo", "Open IA", 37, "c++");
-    developer.fixedBug();
+
+    HiringManager hiring = HiringManager("Rabo Yusuf", "Microsoft", 34, "Hiring Manager");
+
+    Employee* d = &developer;
+    Employee* t = &hiring;
+    d->work();
+    t->work();
 
 }
